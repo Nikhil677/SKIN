@@ -1,0 +1,28 @@
+{
+  "name": "skin-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:demo": "npm --workspace=@skin/demo run dev",
+    "build:demo": "npm --workspace=@skin/demo run build",
+    "dev:extension": "npm --workspace=@skin/extension run dev",
+    "build:extension": "npm --workspace=@skin/extension run build",
+    "build": "npm --workspace=@skin/shared run build && npm --workspace=@skin/demo run build && npm --workspace=@skin/extension run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^22.10.7",
+    "jsdom": "^31.0.1",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
